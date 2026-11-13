@@ -1,25 +1,24 @@
 @import "tailwindcss";
 
-@theme inline {
-  --color-calm-blue: var(--af-primary);
-  --color-calm-blue-light: var(--af-primary-light);
-  --color-sage: var(--af-success);
-  --color-sage-light: var(--af-success-light);
-  --color-lavender: var(--af-accent);
-  --color-lavender-light: var(--af-accent-light);
-  --color-peach: var(--af-warm);
-  --color-peach-light: var(--af-warm-light);
-  --color-sunny: var(--af-sunny);
-  --color-sunny-light: var(--af-sunny-light);
-  --color-ink: var(--af-ink);
-  --color-muted: var(--af-muted);
-  --color-line: var(--af-line);
-  --color-surface: var(--af-surface);
-  --color-canvas: var(--af-canvas);
-  --font-sans: var(--af-font);
-}
-
-@theme inline {
+/* Keep default Tailwind theme tokens; only extend brand colors. */
+@theme {
+  --spacing: 0.25rem;
+  --color-calm-blue: #3556c8;
+  --color-calm-blue-light: #e9eefb;
+  --color-sage: #2f7d4f;
+  --color-sage-light: #e5f3eb;
+  --color-lavender: #6a5acd;
+  --color-lavender-light: #efeefc;
+  --color-peach: #c9602f;
+  --color-peach-light: #f9ece3;
+  --color-sunny: #a9790b;
+  --color-sunny-light: #faf3dd;
+  --color-ink: #22283a;
+  --color-muted: #596274;
+  --color-line: #e1e5ef;
+  --color-surface: #ffffff;
+  --color-canvas: #f4f6fb;
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
   --grid-template-columns-14: repeat(14, minmax(0, 1fr));
 }
 
