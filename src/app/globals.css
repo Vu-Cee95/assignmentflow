@@ -16,7 +16,7 @@
   --color-line: var(--af-line);
   --color-surface: var(--af-surface);
   --color-canvas: var(--af-canvas);
-  --font-sans: var(--af-font trop);
+  --font-sans: var(--af-font);
 }
 
 @theme inline {
