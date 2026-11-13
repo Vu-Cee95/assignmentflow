@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-calm-blue: var(--af-primary);
+  --color-calm-blue-light: var(--af-primary-light);
+  --color-sage: var(--af-success);
+  --color-sage-light: var(--af-success-light);
+  --color-lavender: var(--af-accent);
+  --color-lavender-light: var(--af-accent-light);
+  --color-peach: var(--af-warm);
+  --color-peach-light: var(--af-warm-light);
+  --color-sunny: var(--af-sunny);
+  --color-sunny-light: var(--af-sunny-light);
+  --color-ink: var(--af-ink);
+  --color-muted: var(--af-muted);
+  --color-line: var(--af-line);
+  --color-surface: var(--af-surface);
+  --color-canvas: var(--af-canvas);
+  --font-sans: var(--af-font trop);
+}
+
+@theme inline {
+  --grid-template-columns-14: repeat(14, minmax(0, 1fr));
+}
+
+:root {
+  --af-primary: #3556c8;
+  --af-primary-light: #e9eefb;
+  --af-primary-dark: #2744a0;
+  --af-success: #2f7d4f;
+  --af-success-light: #e5f3eb;
+  --af-accent: #6a5acd;
+  --af-accent-light: #efeefc;
+  --af-warm: #c9602f;
+  --af-warm-light: #f9ece3;
+  --af-sunny: #a9790b;
+  --af-sunny-light: #faf3dd;
+  --af-ink: #22283a;
+  --af-muted: #596274;
+  --af-line: #e1e5ef;
+  --af-surface: #ffffff;
+  --af-canvas: #f4f6fb;
+  --af-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+[data-theme="dark"] {
+  --af-primary: #7c95ec;
+  --af-primary-light: #232a4f;
+  --af-primary-dark: #9db1f2;
+  --af-success: #5cb37f;
+  --af-success-light: #1d3128;
+  --af-accent: #a695e6;
+  --af-accent-light: #2c2648;
+  --af-warm: #e08a63;
+  --af-warm-light: #3a251c;
+  --af-sunny: #d6b04a;
+  --af-sunny-light: #39300f;
+  --af-ink: #e7eaf3;
+  --af-muted: #9aa3b8;
+  --af-line: #333a4e;
+  --af-surface: #191e2c;
+  --af-canvas: #12151f;
+}
+
+[data-theme="high-contrast"] {
+  --af-primary: #0b2c8f;
+  --af-primary-light: #dbe4ff;
+  --af-primary-dark: #081f66;
+  --af-success: #0f5c2f;
+  --af-success-light: #d9f2e3;
+  --af-accent: #3d2f99;
+  --af-accent-light: #e5e2fb;
+  --af-warm: #96350d;
+  --af-warm-light: #fbece2;
+  --af-sunny: #6d5000;
+  --af-sunny-light: #fdf6dc;
+  --af-ink: #000000;
+  --af-muted: #20242c;
+  --af-line: #6b7280;
+  --af-surface: #ffffff;
+  --af-canvas: #fafafc;
+}
+
+html[data-font-size="125"] {
+  font-size: 125%;
+}
+
+html[data-font-size="150"] {
+  font-size: 150%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--af-canvas);
+  color: var(--af-ink);
+  font-family: var(--af-font);
+}
+
+/* 2px visible focus indicator (WCAG 2.4.7) */
+:focus-visible {
+  outline: 2px solid var(--af-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--af-primary);
+  color: #fff;
+}
+
+/* Skip link (WCAG 2.4.1) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 50;
+  background: var(--af-primary);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Respect the in-app reduced-motion preference on top of the OS setting */
+html[data-reduced-motion="true"] {
+  scroll-behavior: auto;
+}
+html[data-reduced-motion="true"] *,
+html[data-reduced-motion="true"] *::before,
+html[data-reduced-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
